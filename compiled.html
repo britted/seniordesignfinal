@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <title>SSB Senior Design</title> 
+  <meta name="apple-touch-fullscreen" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->      
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom -->
+  <link href="css/custom.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Armata|Oxygen' rel='stylesheet' type='text/css'>	
+</head>
+<body id = "app">
+
+
+<div class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+       <span class = "icon-bar"></span> 
+       <span class = "icon-bar"></span> 
+       <span class = "icon-bar"></span> 
+     </button>
+     <a class="navbar-brand text muted" href="index.html">EE</a>
+     <div class="navbar-collapse collapse">
+       <ul class="nav navbar-nav navbar-right nav-tabs" role = "tablist">
+         <li> 
+           <a href = "index.html" alt = "Home"> Home
+           </a>
+         </li>
+         <li>
+           <a href = "index.html#aboutUs" alt = "About Us"> About Us
+           </a>
+         </li>
+         <li>
+           <a href = "index.html#specs" alt = "Projects"> Specs
+           </a>
+         </li>
+         <li>
+           <a href = "index.html#contact"> Contact
+           </a>
+         </li>
+       </ul>
+     </div>
+   </div>
+ </div>
+
+
+<div id="clock-container">
+<svg id="clock" viewBox="0 0 100 100">
+<line id="hour" x1="48.5" y1="50" x2="100" y2="50" width="5" height="40" rx="2.5" ry="2.55" />
+<line id="min" x1="50" y1="50" x2="50" y2="90" width="3" height="40" rx="2" ry="2"/>
+<line id="sec" x1="50" y1="50" x2="50" y2="90" />
+</svg>
+</div>
+
+<div id = "progress" class = "bar col-sm-8 col-sm-offset-2">
+	<span>Ready, Set, Stretch!</span>
+</div>
+
+
+
+<style>
+#clock-container { 
+  display: inline-block;
+  position: relative;
+  width: 40%;
+  height: 40%;
+  margin-top: 3%;  
+  vertical-align: middle;
+  overflow: hidden;
+    top: 30%;
+    left: 30%;
+}
+
+@media(max-width:420px){
+	#clock-container { 
+  display: inline-block;
+  position: relative;
+  width: 60%;
+  height: 60%;  
+  vertical-align: middle;
+  overflow: hidden;
+  margin-top:100px;
+    top: 30%;
+    left: 20%;
+}
+}
+.model-box{
+wertical-align:top;
+} 
+#face { stroke-width: 2px; stroke: #fff; }
+
+#hour, #min, #sec { 
+  stroke-width: 1px;
+  fill: #333;
+  stroke: #555;
+}
+#sec { stroke: #FFFF00; }	
+
+@media screen {
+html, body, div, span {
+margin: 0;
+ padding: 0;
+ border: 0;
+ outline: 0;
+ font-size: 100%;
+ vertical-align: baseline;
+}
+body {
+height: auto;
+ 
+-webkit-text-size-adjust:none;
+ 
+font-family: 'Oxygen', sans-serif;
+ 
+padding:0px;
+overflow-x: hidden;
+background-color: white;
+}
+#app{
+background-color: #093B3C;
+}
+.bar{
+	height: 50px;
+	background-color:#009900;
+	font-size:30px;
+	color:#FFFFFF;
+	text-align:center;
+}
+@media(max-width:420px){
+.bar{
+font-size:20px;
+}
+}
+
+.jumbotron{
+margin-bottom: 0;
+}
+.container .jumbotron, .container-fluid .jumbotron {
+  border-radius: 0; 
+}
+span.head {
+font-weight: bold;
+}
+#face { 
+stroke-width: 2px; 
+stroke: #fff; 
+}
+#hour, #min, #sec { 
+stroke-width: 1px; fill: #333; stroke: #555; 
+}
+#sec { 
+stroke: #f55; 
+}
+#head .container-fluid .jumbotron{
+height: 95vh;
+background-color: #093B3C;
+}
+#head .help-block {
+ color: white;
+}
+.jumbotron .h1, .jumbotron h1{
+font-family: 'Armata', sans-serif;
+color: white;
+}
+#aboutUs .container-fluid .jumbotron{
+background-color: #6B9068;
+}
+#specs .container-fluid .jumbotron{
+background-color: #146C5C;
+}
+#contact .container-fluid .jumbotron{
+background-color: #5B988D;
+}
+.h2, h2{
+color:#333333;
+font-family: 'Armata', sans-serif;
+}
+.help-block {
+ display: block;
+ margin-top: 5px;
+ color: #333333;
+}
+.btn-primary {
+background-color: #5B988D;
+border-color:#5B988D;
+font-family: 'Armata', sans-serif;
+}
+.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open>.dropdown-toggle.btn-primary {
+ background-color: black;
+ border-color: black;
+}
+.navbar-default {
+ background-color: white;
+ border-color: white;
+}
+}
+</style>
+
+<script>
+ setInterval(function(){
+	var deleted = "0";
+	var dataString = "deleted=" + encodeURIComponent(deleted);
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.open("POST", "delete.php", true); 
+	xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
+	xmlHttp.addEventListener("load", function(event){
+    var jsonData = JSON.parse(event.target.responseText); 
+		var sensor2 = jsonData.number;
+		sensor2 = sensor2*0.26392961876;
+		sensor2 = sensor2 - 100;
+		sensor2 = sensor2*1.4;
+        
+        if(parseInt(sensor2) > 80){
+		document.getElementById("progress").style.backgroundColor = "#FF0000";
+		document.getElementById("progress").innerHTML = "Oops- You have gone too far!";
+		document.getElementById("progress").style.color = "#FFFFFF";
+		document.getElementById("progress").style.size = "30px";
+		document.getElementById("sec").style.stroke = "#FF0000"
+		var snd = new Audio('/~sclaybon3/php/SeniorDesignNew/Bell.mp3');
+        snd.play();
+		}else if(parseInt(sensor2) > 60){
+		document.getElementById("sec").style.stroke = "#FFFF00";
+		document.getElementById("progress").innerHTML = "Be careful!";
+		document.getElementById("progress").style.backgroundColor = "#FFFF00"; 
+		document.getElementById("progress").style.color = "#000000";
+		}else if(parseInt(sensor2) > 40){
+		document.getElementById("progress").style.backgroundColor = "#009900"; 
+		document.getElementById("progress").innerHTML = "You can do it!";
+		document.getElementById("sec").style.stroke = "#009900"
+		document.getElementById("progress").style.color = "#FFFFFF";
+		}else if(parseInt(sensor2) < 40){
+		document.getElementById("progress").style.backgroundColor = "#009900"; 
+		document.getElementById("progress").innerHTML = "Keep stretching!";
+		document.getElementById("sec").style.stroke = "#009900"
+		document.getElementById("progress").style.color = "#FFFFFF";
+		}
+
+		if(jsonData.success){ 	
+		  function r(el, deg) {
+        el.setAttribute('transform', 'rotate('+ deg +' 50 50)')
+      }
+      r(sec,(sensor2))
+		}
+	}, false);
+	xmlHttp.send(dataString);
+}, 50);
+
+
+</script>
+
+</body>
+</html>

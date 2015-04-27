@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	
+</head>
+<body>
+	
+
+<button id="Delete_btn">Test</button>
+
+<div class="navbar navbar-default navbar-fixed-top">
+   <div class="container">
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+       <span class = "icon-bar"></span> 
+       <span class = "icon-bar"></span> 
+       <span class = "icon-bar"></span> 
+     </button>
+     <a class="navbar-brand text muted" href="index.html">EE</a>
+     <div class="navbar-collapse collapse">
+       <ul class="nav navbar-nav navbar-right nav-tabs" role = "tablist">
+         <li> 
+           <a href = "index.html" alt = "Home"> Home
+           </a>
+         </li>
+         <li>
+           <a href = "#aboutUs" alt = "About Us"> About Us
+           </a>
+         </li>
+         <li>
+           <a href = "#specs" alt = "Projects"> Specs
+           </a>
+         </li>
+         <li>
+           <a href = "#contact"> Contact
+           </a>
+         </li>
+       </ul>
+     </div>
+   </div>
+ </div>
+
+
+<div id="clock-container">
+<svg id="clock" viewBox="0 0 100 100">
+<line id="hour" x1="48.5" y1="50" x2="100" y2="50" width="5" height="40" rx="2.5" ry="2.55" />
+<line id="min" x1="50" y1="50" x2="50" y2="90" width="3" height="40" rx="2" ry="2"/>
+<line id="sec" x1="50" y1="50" x2="50" y2="90" />
+</svg>
+</div>
+
+<div id = "progress"></div>
+
+
+
+<style>
+
+#clock-container { 
+  display: inline-block;
+  position: relative;
+  width: 20%;
+  vertical-align: middle;
+  overflow: hidden;
+} 
+#face { stroke-width: 2px; stroke: #fff; }
+#hour, #min, #sec { 
+  stroke-width: 1px;
+  fill: #333;
+  stroke: #555;
+}
+#sec { stroke: #f55; }
+
+.progress{
+	height: 50px;
+	width:30px;
+	background-color:#009900;
+	}
+	
+
+@media screen {
+html, body, div, span {
+margin: 0;
+ padding: 0;
+ border: 0;
+ outline: 0;
+ font-size: 100%;
+ vertical-align: baseline;
+}
+body {
+height: auto;
+ 
+-webkit-text-size-adjust:none;
+ 
+font-family: 'Oxygen', sans-serif;
+ 
+padding:0px;
+overflow-x: hidden;
+background-color: white;
+}
+.jumbotron{
+margin-bottom: 0;
+}
+.container .jumbotron, .container-fluid .jumbotron {
+  border-radius: 0; 
+}
+span.head {
+font-weight: bold;
+}
+#face { 
+stroke-width: 2px; 
+stroke: #fff; 
+}
+#hour, #min, #sec { 
+stroke-width: 1px; fill: #333; stroke: #555; 
+}
+#sec { 
+stroke: #f55; 
+}
+#head .container-fluid .jumbotron{
+height: 95vh;
+background-color: #093B3C;
+}
+#head .help-block {
+ color: white;
+}
+.jumbotron .h1, .jumbotron h1{
+font-family: 'Armata', sans-serif;
+color: white;
+}
+#aboutUs .container-fluid .jumbotron{
+background-color: #6B9068;
+}
+#specs .container-fluid .jumbotron{
+background-color: #146C5C;
+}
+#contact .container-fluid .jumbotron{
+background-color: #5B988D;
+}
+.h2, h2{
+color:#333333;
+font-family: 'Armata', sans-serif;
+}
+.help-block {
+ display: block;
+ margin-top: 5px;
+ color: #333333;
+}
+.btn-primary {
+background-color: #5B988D;
+border-color:#5B988D;
+font-family: 'Armata', sans-serif;
+}
+.btn-primary.active, .btn-primary.focus, .btn-primary:active, .btn-primary:focus, .btn-primary:hover, .open>.dropdown-toggle.btn-primary {
+ background-color: black;
+ border-color: black;
+}
+.navbar-default {
+ background-color: white;
+ border-color: white;
+}
+}
+</style>
+
+
+
+
+
+<script>
+ 
+setInterval(function(){
+//function DeleteAjax(event){
+	var deleted = "0";
+	//alert(deleted);
+	// Make a URL-encoded string for passing POST data:
+	var dataString = "deleted=" + encodeURIComponent(deleted);
+        //alert(dataString);
+	var xmlHttp = new XMLHttpRequest(); // Initialize our XMLHttpRequest instance
+	xmlHttp.open("POST", "delete.php", true); // Starting a POST request (NEVER send passwords as GET variables!!!)
+	xmlHttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); // It's easy to forget this line for POST requests
+	xmlHttp.addEventListener("load", function(event){
+                //alert(event.target.responseText);
+                //alert("tested");
+                //alert(jsonData.success);
+                var jsonData = JSON.parse(event.target.responseText); // parse the JSON into a JavaScript object
+				//alert("here we go");
+				var sensor2 = jsonData.number;
+		if(jsonData.success){  // in PHP, this was the "success" key in the associative array; in JavaScript, it's the .success property of jsonData
+			//alert("Your Event Was Deleted");
+			//alert("The number is:" + jsonData.number);
+		
+		//if(sensor2 > 80){
+			//	document.getElementById("progress").style.background = #FF0000;
+			//}
+			
+		function r(el, deg) {
+    el.setAttribute('transform', 'rotate('+ deg +' 50 50)')
+  }
+ 
+	r(sec,(sensor2))
+//alert("sensor2 is:" + sensor2);
+		
+		}else{
+			//alert("Your Event was not deleted");
+		}
+	}, false); // Bind the callback to the load event	
+	xmlHttp.send(dataString); // Send the data
+//}
+}, 200);
+//document.getElementById("Delete_btn").addEventListener("click", DeleteAjax, false); // Bind the AJAX call to button click
+
+alert(sensor2);
+
+
+
+</script>
+
+</body>
+</html>

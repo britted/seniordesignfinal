@@ -1,0 +1,85 @@
+body{
+	font-family: "Century Gothic", Helvetica, sans-serif;
+	background-color: #C6C6C6;
+}
+
+header{
+	text-align: center;
+	color: #006666;
+	font-size: 8pt;
+	border-bottom: solid;/*
+
+	border-color: #7A7A52;*/
+}
+
+h1{
+	text-align: center;
+	margin-bottom: 0;
+	font-size: 24pt;
+}
+
+a{
+	text-decoration: none;
+	color: #006666;
+}
+
+a:hover{
+	color: white;
+}
+
+a:link{
+	color: #29A6CF;
+}
+
+p{
+	font-size: 8pt;
+}
+
+div{
+	float: left;
+	color: #006666;
+;
+}
+
+.info{
+	background-color: #A0A0A0;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 18%;
+	border-right: dotted;
+	border-color: #006666;
+
+}
+
+.description{
+	list-style-type: circle;
+	font-size: 8pt;
+}
+
+.work{
+	margin:0% 1% 0% .3%;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: 37%;
+}
+
+.international{
+	margin:0% 1% 0% .3%;
+	padding-left: 10px;
+	padding-right: 10px;
+	width: 30%;
+}
+.activities{
+	margin:0% 1% 0% .3%;
+	padding-left: 10px;
+	padding-right: 10px;
+	width:30%;
+}
+
+.skills{
+	margin:0% 1% 0% .3%;
+	padding-left: 10px;
+	padding-right: 10px;
+	width:30%;
+}
+

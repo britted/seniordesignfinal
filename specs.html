@@ -1,0 +1,274 @@
+
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+		<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+		<title>SSB Senior Design</title> 
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <!-- Bootstrap -->
+	    <link href="css/bootstrap.min.css" rel="stylesheet">
+	    <!-- Custom -->
+	    <link href="css/custom.css" rel="stylesheet">
+	<!-- included from initial example -->
+	    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+		<style> 
+		#no {
+			display: none;	
+		}
+		
+		@media screen {
+			html, body, div, span {
+				margin: 0;
+			  padding: 0;
+			  border: 0;
+			  outline: 0;
+			  font-size: 100%;
+			  vertical-align: baseline;
+			}			
+			body {
+				height: auto;
+		  	-webkit-text-size-adjust:none;
+		  	font-family:Helvetica, Arial, Verdana, sans-serif;
+		  	padding:0px;
+				overflow-x: hidden;	
+				background-color: white;	
+			}		
+			
+			
+			.box {
+				position: relative;
+				float: left;
+				width: 45%;
+				padding: 7px;
+				border: 1px solid rgba(255, 255, 255, 0.6);
+				background: rgba(178,215,255,0.75);
+				min-height: 160px;
+			}	
+			
+			.box2 {
+				position: relative;
+				float: left;
+				width: 45%;
+				padding: 7px;
+				border: 1px solid rgba(255, 255, 255, 0.6);
+				background: rgba(178,215,255,0.75);
+			}	
+			
+			.box span {
+				display: block;
+			}
+			
+			span.head {
+				font-weight: bold;				
+			}
+			#face { 
+				stroke-width: 2px; 
+				stroke: #fff; 
+			}
+			#hour, #min, #sec { 
+				stroke-width: 1px; fill: #333; stroke: #555; 
+			}
+			#sec { 
+				stroke: #f55; 
+			}
+		
+		}
+		</style> 
+	</head> 
+
+	<body>
+		<div class="navbar navbar-default navbar-fixed-top">
+	    <div class="container">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	        <span class = "icon-bar"></span> 
+	        <span class = "icon-bar"></span> 
+	        <span class = "icon-bar"></span> 
+	      </button>
+	      <a class="navbar-brand text muted" href="index.html">BE</a>
+	      <div class="navbar-collapse collapse">
+	        <ul class="nav navbar-nav navbar-right nav-tabs" role = "tablist">
+	          <li> 
+	            <a href = "index.html" alt = "Home"> Home
+	            </a>
+	          </li>
+	          <li>
+	            <a href = "aboutMe.html" alt = "About Us"> About Us
+	            </a>
+	          </li>
+	          <li>
+	            <a href = "projects.html" alt = "Projects"> Specs
+	            </a>
+	          </li>
+	          <li>
+	            <a href = "research.html" alt = "Research"> Research
+	            </a>
+	          </li>
+	          <li>
+	            <a href = "contact.html"> Contact
+	            </a>
+	          </li>
+	        </ul>
+	      </div>
+	    </div>
+	  </div>
+
+	  <section class = "head">
+	    <div class = "container-fluid">
+	      <div class ="row">
+	        <div class = "jumbotron">
+	          <br> &nbsp
+	          <br> &nbsp
+	          <h1>Welcome</h1>
+	          <p> Our project design will enhance doctor-patient relationships 
+	          	<br>by allowing rehab exercises to be viewed by patients as they do them, 
+	          	<br> and have the info stored for the doctor's viewing.
+	          <br> &nbsp
+	          <br> &nbsp
+	          <br> &nbsp
+	          <span class = "hidden-sm hidden-xs">
+	            <a href = "aboutMe.html">
+	              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Find out more</button>
+	            </a>
+	          </span>
+	          <span class = "hidden-md hidden-lg">
+	            <a href = "aboutMe.html">
+	              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Find out more</button>
+	            </a>
+	          </span>
+	          <span class = "hidden-sm hidden-xs">
+	            <a href = "aboutMe.html">
+	              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Click to launch app</button>
+	            </a>
+	          </span>
+	          <span class = "hidden-md hidden-lg">
+	            <a href = "aboutMe.html">
+	              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Click to launch app</button>
+	            </a>
+	          </span>
+	          <br> &nbsp
+	          </p>
+	        </div>
+	      </div>
+	    </div>
+	  </section>
+
+		<div id="no">
+			Your browser does not support Device Orientation and Motion API. Try this sample with iPhone, iPod or iPad with iOS 4.2+.    
+		</div>
+
+		<svg id="clock" viewBox="0 0 100 100">
+			<line id="hour" x1="48.5" y1="50" x2="100" y2="50" width="5" height="40" rx="2.5" ry="2.55" />
+			<line id="min" x1="50" y1="50" x2="50" y2="90" width="3" height="40" rx="2" ry="2"/>
+			<line id="sec" x1="50" y1="50" x2="50" y2="90" />
+		</svg>
+		<!-- Included from bootstrap example -->
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		    <script src="js/bootstrap.min.js"></script>
+		<script> 
+			// Position Variables
+			var x = 0;
+			var y = 0;
+			var z = 0;
+
+			// Speed - Velocity
+			var vx = 0;
+			var vy = 0;
+			var vz = 0;
+
+			// Acceleration
+
+			var ax = {{accelX}};
+			var ay = {{accelY}};
+			var az = {{accelZ}};
+			
+
+			var ai = 0;
+			var arAlpha = 0;
+			var arBeta = 0;
+			var arGamma = 0;
+
+			var delay = 1000;
+			var vMultiplier = 0.01;			var alpha = 0;
+		
+			var alpha = 0;
+			var beta = 0;
+			var gamma = 0;
+			
+			var i = 0;
+			
+				
+				function proper(ax_l, ay_l, az_l){
+					ax = ax * 1000;
+					ay = ay * 100;
+					az = az * 100;
+				}
+			
+				window.ondeviceorientation = function(event) {
+					alpha = Math.round(event.alpha);
+					beta = Math.round(event.beta);
+					gamma = Math.round(event.gamma);
+				}	
+
+				function d2h(d) {return d.toString(16);}
+				function h2d(h) {return parseInt(h,16);}
+				
+				function makecolor(a, b, c) {
+					red = Math.abs(a) % 255;
+					green = Math.abs(b) % 255;
+					blue = Math.abs(c) % 255;
+					return "#" + d2h(red) + d2h(green) + d2h(blue);
+				}
+				
+				function makeacceleratedcolor(a, b, c) {
+					red = Math.round(Math.abs(a + az) % 255);
+					green = Math.round(Math.abs(b + ay) % 255);
+					blue = Math.round(Math.abs(c + az) % 255);
+					return "#" + d2h(red) + d2h(green) + d2h(blue);
+				}
+
+				function r(el, deg) {
+					// console.log(deg,typeof(deg));
+					el.setAttribute('transform', 'rotate(' + deg +' 50 50)')
+				}
+
+				var i = 0;
+
+
+ 				// while ( i < ax.length) {
+ 				// 	if(ax[i] < 0){
+ 				// 		ax[i] = -1* ax[i];
+ 				// 	}
+ 				// 	i = i +1;
+ 				// }
+ 				if(i < ax.length) { 
+					setInterval(function() {
+					// if (ax.length == ay.length){	
+				// alert(az[1]);
+			 	// r(sec, parseInt((180/Math.PI)))
+			 			console.log(i)
+						console.log(ax[i])
+						console.log(typeof(parseInt(ax[i]*(180/Math.PI))))
+	                	r(sec, parseInt(ax[i]*(18000/Math.PI)))
+	                	i = i+1;
+
+
+					}, delay);
+				}
+
+
+			</script> 
+		</body> 
+</html> 
